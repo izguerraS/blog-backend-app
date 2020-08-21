@@ -16,7 +16,7 @@ class Api::PostsController < ApplicationController
     if @post.save
       render "show.json.jbuilder"
     else
-      render json: {errors: @post.errors.full_messages}, status: :bad_request
+      render json: {errors: @post.errors.full_messages}, status: :unprocessable_entity
     end
   end
 
